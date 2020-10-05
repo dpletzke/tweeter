@@ -1,0 +1,27 @@
+body > nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+body > nav > * {
+  margin: 1.5em;
+}
+
+body > nav > span {
+  font-family: 'Bungee', cursive;
+  font-size: 1.5em ;
+  margin-right: auto;
+}
+
+body > nav > a {
+  text-decoration: none;
+  color: white;
+}
+
+body > nav > a > span {
+  font-weight: bold;
+}
