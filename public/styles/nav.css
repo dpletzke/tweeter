@@ -20,8 +20,20 @@ body > nav > span {
 body > nav > a {
   text-decoration: none;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-body > nav > a > span {
+body > nav > a:hover {
+  padding-top: 0.2em;
+}
+
+
+body > nav > a > p {
+  margin: 0;
+}
+
+body > nav > a > p > span {
   font-weight: bold;
 }

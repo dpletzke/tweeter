@@ -6,7 +6,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
@@ -20,13 +20,17 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <a href=""><span>Write</span> a new Tweet</a>
+      <a href="">
+        <p><span>Write</span> a new Tweet</p>
+        <i class="fa fa-angle-double-down" style="color: red; z-index: 99;"></i>
+      </a>
     </nav>
     <header>
       <div>

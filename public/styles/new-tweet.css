@@ -59,6 +59,10 @@
   text-decoration: none;
 }
 
+.counter-negative {
+  color: red;
+}
+
 /* invisible class for screen readers inspired from bootstrap*/
 .sr-only {
   position: absolute;
