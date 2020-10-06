@@ -1,0 +1,72 @@
+
+/* new tweet card */
+.new-tweet {
+  display: flex;
+  justify-content: stretch;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* form within tweet card */
+.new-tweet > form {
+  width: inherit;
+}
+
+/* text-area input for tweet */
+.new-tweet #tweet-text {
+  width: inherit;
+  outline: none;
+  resize: none;
+  border: none;
+  border-bottom: 5px solid #54514a;
+  background-color: inherit;
+  color: #54514a;
+  font-weight: 600;
+  height: 2em;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.new-tweet #tweet-text::placeholder {
+  color: #54514a;
+  vertical-align: center;
+}
+
+
+/* button and counter container */
+.new-tweet > form > div {
+  width: inherit;
+  display: flex;
+}
+
+
+/* character counter and button */
+.new-tweet .counter, .new-tweet div > button {
+  font-family: 'Bungee', cursive;
+  font-size: 1em;
+  padding: 0.3em 0.5em;
+
+}
+
+/* tweet button */
+.new-tweet > form > div > button {
+  margin-right: auto;
+  background-color: #4056A1;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* invisible class for screen readers inspired from bootstrap*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
