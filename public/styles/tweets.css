@@ -1,0 +1,67 @@
+.all-tweets article {
+  border: 5px solid #54514a;;
+  padding: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.all-tweets article * {
+  opacity: 0.7;
+}
+
+
+.all-tweets header {
+  display: flex;
+  align-items: center;
+}
+
+.all-tweets header > * {
+  margin: 0.3em;
+}
+
+.all-tweets h4:last-child {
+  margin-left: auto;
+  visibility: hidden;
+}
+
+.all-tweets article > p {
+  border-bottom: 5px solid #54514a;
+  padding-bottom: 1em;
+  margin-bottom: 0em;
+}
+
+.all-tweets footer {
+  display: flex;
+  align-content: center;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+.all-tweets footer > * {
+  margin: 0.1em;
+}
+
+.all-tweets footer > div {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.all-tweets footer i {
+  margin: 0.2em;
+  color: #4056A1;
+}
+
+/* ------------------- */
+.all-tweets article:hover h4:last-child {
+  margin-left: auto;
+  visibility: visible;
+  color: #42b7c7;
+}
+
+.all-tweets article:hover {
+  box-shadow: 10px 10px #42b7c7;;
+}
+
+.all-tweets article:hover * {
+  opacity: 1;
+}
