@@ -25,8 +25,8 @@ body > nav > a {
   align-items: center;
 }
 
-body > nav > a:hover {
-  padding-top: 0.2em;
+body > nav > a:hover > i{
+  padding-top: 0.4em;
 }
 
 
