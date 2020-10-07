@@ -61,10 +61,10 @@ const createTweetElement = (tweet) => {
 };
 
 const renderTweets = (tweetData) => {
-  for(const tweet of tweetData) {
+  for (const tweet of tweetData) {
     $('.all-tweets').append(createTweetElement(tweet));
   }
-}
+};
 
 
 const data = [
@@ -90,7 +90,7 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 $(document).ready(() => {
   renderTweets(data);
