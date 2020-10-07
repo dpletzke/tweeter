@@ -37,6 +37,7 @@ const createTweetElement = (tweet) => {
   const { user, content, created_at } = tweet;
   const { name, avatars, handle } = user;
   const timePosted = new Date(0);
+  
   timePosted.setUTCMilliseconds(created_at);
 
   let $tweet = '';
