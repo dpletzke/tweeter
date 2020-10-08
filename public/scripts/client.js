@@ -44,7 +44,7 @@ const createTweetElement = (tweet) => {
   $tweet += `<h4>${name}</h4>`;
   $tweet += `<h4>${handle}</h4>`;
   $tweet += `</header>`;
-  $tweet += `<p>${content.text}</p>`;
+  $tweet += `${$('<p>').text(content.text)}`;
   $tweet += `<footer>`;
   $tweet += `<p title="${timePosted}">${getTimeAgo(created_at)}</p>`;
   $tweet += `<div>`;
