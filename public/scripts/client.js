@@ -5,20 +5,17 @@
  */
 
 const parseDate = (date) => {
-  const dateTime = date.toISOString();
+
   const time = {
-    year: dateTime.slice(0, 4),
-    month: dateTime.slice(5, 7),
-    day: dateTime.slice(8, 10),
-    hour: dateTime.slice(11, 13),
-    minute: dateTime.slice(14, 16),
-    second: dateTime.slice(17, 19),
-    millisecond: dateTime.slice(20, 23)
+    year: date.getYear(),
+    month: date.getMonth(),
+    day: date.getDate(),
+    hour: date.getHours(),
+    minute: date.getMinutes(),
+    second: date.getSeconds(),
+    millisecond: date.getMilliseconds()
   };
-  for (const t in time) {
-    time[t] = Number(time[t]);
-  }
- 
+
   return time;
 };
 
@@ -36,8 +33,8 @@ const getTimeAgo = (milliseconds) => {
 const createTweetElement = (tweet) => {
   const { user, content, created_at } = tweet;
   const { name, avatars, handle } = user;
+
   const timePosted = new Date(0);
-  
   timePosted.setUTCMilliseconds(created_at);
 
   let $tweet = '';
@@ -66,32 +63,53 @@ const renderTweets = (tweetData) => {
   }
 };
 
+const renderTweet = (tweet) => {
+  $('.all-tweets').prepend(createTweetElement(tweet));
+}
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+const loadTweets = () => {
+  $.ajax({ 
+    url: '/tweets/', 
+    method: 'GET', 
+  })
+  .then(function (data) {    
+    renderTweets(data.reverse());
+  });
+}
 
-$(document).ready(() => {
-  renderTweets(data);
+const loadNewestTweet = () => {
+  $.ajax({
+    url: '/tweets/',
+    method: 'GET'
+  })
+  .then (function (data) {
+    renderTweet(data.reverse()[0]);
+  });
+}
+
+$(document).ready(function() {
+  
+  loadTweets();
+
+  const $form = $('.new-tweet form');
+  $form.submit(function(event) {
+    event.preventDefault();
+    const $tweetText = $('.new-tweet textarea').val();
+    if(!$tweetText.length) {
+      alert('Nothing in the text box!');
+      return false;
+    } else if($tweetText.length > 140) {
+      alert('Tweet greater than 140 characters!');
+      return false;
+    } 
+    $.ajax({ 
+      url: '/tweets/', 
+      method: 'POST', 
+      data: $('.new-tweet textarea').serialize()
+    })
+    .then(function () {
+      loadNewestTweet();
+    });
+
+  });
 });
