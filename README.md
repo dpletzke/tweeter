@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-![Desktop View](https://raw.githubusercontent.com/dpletzke/tweeter/master/docs/view-desktop.png)
-![Tablet View](https://raw.githubusercontent.com/dpletzke/tweeter/master/docs/view-tablet.png)
-![Mobile View](https://raw.githubusercontent.com/dpletzke/tweeter/master/docs/view-mobile.png)
+![Desktop View](./docs/view-desktop.png)
+![Tablet View](./docs/view-tablet.png)
+![Mobile View](./docs/view-mobile.png)
 
 ## Getting Started
 
