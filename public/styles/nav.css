@@ -32,6 +32,7 @@ body > nav > a:hover > i{
 
 
 body > nav > a > p {
+  text-align: center;
   margin: 0;
 }
 
@@ -39,6 +40,13 @@ body > nav > a > p > span {
   font-weight: bold;
 }
 
+
+@media (max-width: 450px) {
+
+  body > nav > span {
+    font-size: 1em;
+  }
+}
 
 @media (max-width: 1024px) {
   body > nav {
