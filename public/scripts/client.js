@@ -59,6 +59,7 @@ $(document).ready(function() {
       data: $('.new-tweet textarea').serialize()
     })
       .then(function() {
+        $errorLabel.hide();
         $('.new-tweet textarea').val('');
         loadNewestTweet();
       });
