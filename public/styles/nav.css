@@ -5,8 +5,6 @@ body > nav {
   color: #ffffff;
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 0;
   z-index: 99;
 }
 
@@ -39,4 +37,19 @@ body > nav > a > p {
 
 body > nav > a > p > span {
   font-weight: bold;
+}
+
+
+@media (max-width: 1024px) {
+  body > nav {
+    background: none;
+    position: absolute;
+  }
+}
+
+@media (min-width: 1024px) {
+  body > nav {
+  position: fixed;    
+  }
+  
 }

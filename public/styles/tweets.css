@@ -67,3 +67,7 @@
 .all-tweets article:hover, .all-tweets article:hover * {
   opacity: 1;
 }
+
+@media (mmin-width: 1024px) {
+ 
+}
