@@ -63,6 +63,19 @@
   color: red;
 }
 
+/* error message styling */
+
+.error {
+  color: white;
+  background-color: red;
+  font-size: 0.8em;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  padding-right: 0.5rem;
+  margin-right: auto;
+}
+
 /* invisible class for screen readers inspired from bootstrap*/
 .sr-only {
   position: absolute;
