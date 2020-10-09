@@ -8,14 +8,16 @@ This repository is the starter code for the project: Students will fork and clon
 
 <br>
 <p align="center">
-  <img src="https://github.com/dpletzke/tweeter/blob/master/docs/view-desktop.png?raw=true" height="350">Desktop View
+  <img src="https://github.com/dpletzke/tweeter/blob/master/docs/view-desktop.png?raw=true" height="350">
+<p align='center'>Desktop View
+</p>
 </p>
 <br>
 <p align='center'>
   <img src="https://github.com/dpletzke/tweeter/blob/master/docs/view-tablet.png?raw=true" height="350">
   <img src="https://github.com/dpletzke/tweeter/blob/master/docs/view-mobile.png?raw=true" height="350">
-</p>
-<p align='center'>Tablet and Mobile View
+  <p align='center'>Tablet and Mobile View
+  </p>
 </p>
 
 
