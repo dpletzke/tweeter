@@ -34,7 +34,7 @@ const escape =  function(str) {
   let p = document.createElement('p');
   p.appendChild(document.createTextNode(str));
   return p.innerHTML;
-}
+};
 
 const createTweetElement = (tweet) => {
   const { user, content, created_at } = tweet;
@@ -71,27 +71,27 @@ const renderTweets = (tweetData) => {
 
 const renderTweet = (tweet) => {
   $('.all-tweets').prepend(createTweetElement(tweet));
-}
+};
 
 const loadTweets = () => {
-  $.ajax({ 
-    url: '/tweets/', 
-    method: 'GET', 
+  $.ajax({
+    url: '/tweets/',
+    method: 'GET',
   })
-  .then(function (data) {    
-    renderTweets(data.reverse());
-  });
-}
+    .then(function(data) {
+      renderTweets(data.reverse());
+    });
+};
 
 const loadNewestTweet = () => {
   $.ajax({
     url: '/tweets/',
     method: 'GET'
   })
-  .then (function (data) {
-    renderTweet(data.reverse()[0]);
-  });
-}
+    .then(function(data) {
+      renderTweet(data.reverse()[0]);
+    });
+};
 
 $(document).ready(function() {
   const $errorLabel = $('.new-tweet .error');
@@ -104,28 +104,28 @@ $(document).ready(function() {
     event.preventDefault();
 
     const $tweetText = $('.new-tweet textarea').val();
-    if(!$tweetText.length) {
+    if (!$tweetText.length) {
       $errorLabel.hide();
       $errorLabel.text('❕Your text box is empty! Input is required.');
       $errorLabel.slideDown();
       return false;
 
-    } else if($tweetText.length > 140) {
+    } else if ($tweetText.length > 140) {
       $errorLabel.hide();
       $errorLabel.text('❕Your tweet is longer than 140 characters! Shorter message required.');
       $errorLabel.slideDown();
       return false;
-    } 
+    }
     
-    $.ajax({ 
-      url: '/tweets/', 
-      method: 'POST', 
+    $.ajax({
+      url: '/tweets/',
+      method: 'POST',
       data: $('.new-tweet textarea').serialize()
     })
-    .then(function () {
-      $('.new-tweet textarea').val('');
-      loadNewestTweet();
-    });
+      .then(function() {
+        $('.new-tweet textarea').val('');
+        loadNewestTweet();
+      });
 
   });
 });
