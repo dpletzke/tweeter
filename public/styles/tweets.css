@@ -24,9 +24,28 @@
   margin: 0.3em;
 }
 
+.all-tweets header > div {
+  display: flex;
+  flex-grow: 1;
+}
+
 .all-tweets h4:last-child {
   margin-left: auto;
   color: #42b7c7;
+}
+
+@media (max-width: 450px) {
+
+  .all-tweets header h4 {
+    margin: 0;
+    margin-left: auto;
+    font-size: 0.8em;
+  }
+
+  .all-tweets header div {
+    flex-direction: column;
+    
+  }
 }
 
 .all-tweets article > p {

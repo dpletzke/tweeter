@@ -41,8 +41,10 @@ const createTweetElement = (tweet) => {
   $tweet += `<article>`;
   $tweet += `<header>`;
   $tweet += `<img src="${avatars}"></img>`;
+  $tweet += `<div>`
   $tweet += `<h4>${name}</h4>`;
   $tweet += `<h4>${handle}</h4>`;
+  $tweet += `</div>`
   $tweet += `</header>`;
   $tweet += `<p>${escape(content.text)}</p>`;
   $tweet += `<footer>`;
