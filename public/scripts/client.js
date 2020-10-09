@@ -30,6 +30,12 @@ const getTimeAgo = (milliseconds) => {
   return `${diffTime} ${displayKey}${diffTime !== 1 ? 's' : ''} ago`;
 };
 
+const escape =  function(str) {
+  let p = document.createElement('p');
+  p.appendChild(document.createTextNode(str));
+  return p.innerHTML;
+}
+
 const createTweetElement = (tweet) => {
   const { user, content, created_at } = tweet;
   const { name, avatars, handle } = user;
@@ -44,7 +50,7 @@ const createTweetElement = (tweet) => {
   $tweet += `<h4>${name}</h4>`;
   $tweet += `<h4>${handle}</h4>`;
   $tweet += `</header>`;
-  $tweet += `${$('<p>').text(content.text)}`;
+  $tweet += `${escape(content.text)}`;
   $tweet += `<footer>`;
   $tweet += `<p title="${timePosted}">${getTimeAgo(created_at)}</p>`;
   $tweet += `<div>`;
@@ -88,6 +94,8 @@ const loadNewestTweet = () => {
 }
 
 $(document).ready(function() {
+  const $errorLabel = $('.new-tweet .error');
+  $errorLabel.hide();
   
   loadTweets();
 
@@ -96,10 +104,14 @@ $(document).ready(function() {
     event.preventDefault();
     const $tweetText = $('.new-tweet textarea').val();
     if(!$tweetText.length) {
-      alert('Nothing in the text box!');
+      $errorLabel.hide();
+      $errorLabel.text('❕Your text box is empty! Input is required.');
+      $errorLabel.slideDown();
       return false;
     } else if($tweetText.length > 140) {
-      alert('Tweet greater than 140 characters!');
+      $errorLabel.hide();
+      $errorLabel.text('❕Your tweet is longer than 140 characters! Shorter message required.');
+      $errorLabel.slideDown();
       return false;
     } 
     $.ajax({ 
