@@ -6,11 +6,20 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
+<br>
 <p align="center">
-  <img src="https://github.com/dpletzke/tweeter/blob/master/docs/view-desktop.png?raw=true" height="350">
+  <img src="https://github.com/dpletzke/tweeter/blob/master/docs/view-desktop.png?raw=true" height="350">Desktop View
+</p>
+<br>
+<p align='center'>
   <img src="https://github.com/dpletzke/tweeter/blob/master/docs/view-tablet.png?raw=true" height="350">
   <img src="https://github.com/dpletzke/tweeter/blob/master/docs/view-mobile.png?raw=true" height="350">
 </p>
+<p align='center'>Tablet and Mobile View
+</p>
+
+
+---
 
 ## Getting Started
 
