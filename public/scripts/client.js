@@ -42,7 +42,7 @@ $(document).ready(function() {
     const $tweetText = $('.new-tweet textarea').val();
     if (!$tweetText.length) {
       $errorLabel.hide();
-      $errorLabel.text('❕Your text box is empty! Input is required.');
+      $errorLabel.text('❕Your tweet is empty! Input is required.');
       $errorLabel.slideDown();
       return false;
 
@@ -59,7 +59,7 @@ $(document).ready(function() {
       data: $('.new-tweet textarea').serialize()
     })
       .then(function() {
-        $errorLabel.hide();
+        $errorLabel.slideUp();
         $('.new-tweet textarea').val('');
         loadNewestTweet();
       });

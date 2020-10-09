@@ -50,10 +50,10 @@
       <section class="new-tweet">
         <form method="POST" action="/tweets/">
           <label class="sr-only" for="tweet-text">Compose Tweet</label>
+          <label class="error" for='tweet-text'></label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
             <button type="submit">Tweet</button>
-            <label class="error" for='tweet-text'></label>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
